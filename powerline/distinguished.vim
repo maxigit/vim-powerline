@@ -39,3 +39,17 @@ function! Stl_GetCommandTLine() " {{{
 
 	return line
 endfunction " }}}
+
+function Stl_GitName()
+  if exists("b:git_dir")
+    return substitute(b:git_dir, '.\{-}\([^/]\+\)/\.git$', '⌦  \1', '')
+  else
+    return ""
+  end
+endfunction
+function Stl_GetRelativeDir()
+    let bufname = expand('%:p:h')
+    let curdir = glob(getcwd())
+    let bufname = substitute(bufname, "^".curdir, './','')
+    return simplify(substitute(bufname, '^'.$HOME, '~', ""))
+endfunction

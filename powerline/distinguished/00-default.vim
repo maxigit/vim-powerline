@@ -58,6 +58,11 @@ call Pl#Statusline(
 		\ Pl#HiNonCurrent(Pl#BG(233))
 		\ ),
 	\
+	\ Pl#Segment(" hello %{Stl_GetRelativeDir()} %c ",
+		\ Pl#HiCurrent(   Pl#FG(246), Pl#BG(236)),
+		\ Pl#HiInsert(    Pl#FG( 75), Pl#BG( 24))
+		\ ),
+	\
 	\ Pl#Segment("%{&fileformat} %{(&fenc == '' ? &enc : &fenc)} ",
 		\ Pl#HiCurrent(   Pl#FG(246), Pl#BG(236)),
 		\ Pl#HiInsert(    Pl#FG( 75), Pl#BG( 24))
