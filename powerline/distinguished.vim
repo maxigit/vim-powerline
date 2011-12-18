@@ -50,6 +50,18 @@ endfunction
 function Stl_GetRelativeDir()
     let bufname = expand('%:p:h')
     let curdir = glob(getcwd())
-    let bufname = substitute(bufname, "^".curdir, './','')
+  if exists("b:git_dir")
+    let git_dir = Stl_GetGitName()
+    let bufname = substitute(bufname, git_dir, '['.git_dir.']','') 
+    let curdir2 = substitute(curdir, git_dir.".*", '\\['.git_dir.'\\]','') 
+    if curdir2 != curdir
+      " current directory include git directory
+    let bufname = substitute(bufname, "^".curdir2, '['.git_dir.']','') 
+  end
+  end
+    "suppress current dir
+    let bufname = substitute(bufname, "^".curdir, './','') 
+    "suppress git root
     return simplify(substitute(bufname, '^'.$HOME, '~', ""))
+
 endfunction
