@@ -12,6 +12,14 @@ call Pl#Statusline(
 		\ Pl#HiNonCurrent(Pl#FG(239), Pl#BG(235))
 		\ ),
 	\
+	\ Pl#Segment("%{Stl_GetGitName()}",
+		\ exists('g:loaded_fugitive') && g:loaded_fugitive == 1,
+		\
+		\ Pl#HiCurrent(   Pl#FG(250), Pl#BG(240)),
+		\ Pl#HiInsert(    Pl#FG(117), Pl#BG( 31)),
+		\ Pl#HiNonCurrent(Pl#FG(239), Pl#BG(235))
+		\ ),
+	\
 	\ Pl#SegmentGroup(
 		\ Pl#HiCurrent(   Pl#BG(240)),
 		\ Pl#HiInsert(    Pl#BG( 31)),
@@ -22,15 +30,15 @@ call Pl#Statusline(
 			\ Pl#HiInsert(    Pl#FG(196)),
 			\ Pl#HiNonCurrent(Pl#FG( 88))
 			\ ),
+		\ Pl#Segment("%{&modified?' ✘':''}",
+			\ Pl#HiCurrent(   Pl#FG(196), Pl#Attr('bold')),
+			\ Pl#HiInsert(    Pl#FG(196), Pl#Attr('bold')),
+			\ Pl#HiNonCurrent(Pl#FG( 88))
+			\ ),
 		\ Pl#Segment(" %t ",
 			\ Pl#HiCurrent(   Pl#FG(231), Pl#Attr('bold')),
 			\ Pl#HiInsert(    Pl#FG(231), Pl#Attr('bold')),
 			\ Pl#HiNonCurrent(Pl#FG(245), Pl#Attr('bold'))
-			\ ),
-		\ Pl#Segment("%M ",
-			\ Pl#HiCurrent(   Pl#FG(196), Pl#Attr('bold')),
-			\ Pl#HiInsert(    Pl#FG(196), Pl#Attr('bold')),
-			\ Pl#HiNonCurrent(Pl#FG( 88))
 			\ ),
 		\  Pl#Segment("%H%W ",
 			\ Pl#HiCurrent(   Pl#FG(250)),
@@ -55,11 +63,11 @@ call Pl#Statusline(
 	\ Pl#Split(
 		\ Pl#HiCurrent(   Pl#BG(236)),
 		\ Pl#HiInsert(    Pl#BG( 24)),
-		\ Pl#HiNonCurrent(Pl#BG(233))
+		\ Pl#HiNonCurrent(Pl#BG(234))
 		\ ),
 	\
-	\ Pl#Segment(" hello %{Stl_GetRelativeDir()} %c ",
-		\ Pl#HiCurrent(   Pl#FG(246), Pl#BG(236)),
+	\ Pl#Segment("%<%{Stl_GetRelativeDir()} ",
+		\ Pl#HiCurrent(   Pl#FG(248), Pl#BG(236)),
 		\ Pl#HiInsert(    Pl#FG( 75), Pl#BG( 24))
 		\ ),
 	\
