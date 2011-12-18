@@ -42,7 +42,7 @@ endfunction " }}}
 
 function Stl_GetGitName()
   if exists("b:git_dir")
-    return substitute(b:git_dir, '.\{-}\([^/]\+\)/\.git$', '⌦  \1', '')
+    return substitute(b:git_dir, '.\{-}\([^/]\+\)/\.git$', '\1', '')
   else
     return ""
   end
