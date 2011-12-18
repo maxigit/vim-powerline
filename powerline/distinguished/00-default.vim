@@ -67,18 +67,18 @@ call Pl#Statusline(
 		\ ),
 	\
 	\ Pl#Segment("%<%{Stl_GetRelativeDir()} ",
-		\ Pl#HiCurrent(   Pl#FG(248), Pl#BG(236)),
-		\ Pl#HiInsert(    Pl#FG( 75), Pl#BG( 24))
+		\ Pl#HiCurrent(   Pl#FG(248), Pl#BG(236), Pl#Attr('bold')),
+		\ Pl#HiInsert(    Pl#FG( 75), Pl#BG( 24), Pl#Attr('bold'))
 		\ ),
 	\
 	\ Pl#Segment("%{&fileformat} %{(&fenc == '' ? &enc : &fenc)} ",
-		\ Pl#HiCurrent(   Pl#FG(246), Pl#BG(236)),
-		\ Pl#HiInsert(    Pl#FG( 75), Pl#BG( 24))
+		\ Pl#HiCurrent(   Pl#FG(0), Pl#BG(236)),
+		\ Pl#HiInsert(    Pl#FG(0), Pl#BG( 24))
 		\ ),
 	\
 	\ Pl#Segment(" $ft %{strlen(&ft) ? &ft : 'n/a'} ",
-		\ Pl#HiCurrent(   Pl#FG(246), Pl#BG(236)),
-		\ Pl#HiInsert(    Pl#FG( 75), Pl#BG( 24)),
+		\ Pl#HiCurrent(   Pl#FG(0), Pl#BG(236)),
+		\ Pl#HiInsert(    Pl#FG(0), Pl#BG( 24)),
 		\ ),
 	\
 	\ Pl#Segment(" %3p%% ",
