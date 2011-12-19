@@ -1,7 +1,7 @@
 call Pl#Statusline(
 	\ Pl#SegmentGroup(
-		\ Pl#HiCurrent(   Pl#BG(214)),
-		\ Pl#HiInsert(    Pl#BG( 214)),
+		\ Pl#HiCurrent(   Pl#BG(94)),
+		\ Pl#HiInsert(    Pl#BG( 94)),
 		\ Pl#HiNonCurrent(Pl#BG(24)),
 		\
 		\ Pl#Segment("%{&modified?' ✘':''}",
@@ -22,7 +22,7 @@ call Pl#Statusline(
     \ Pl#Segment("%{Stl_GetBranch('$branch')}",
       \ exists('g:loaded_fugitive') && g:loaded_fugitive == 1,
       \
-      \ Pl#HiCurrent(   Pl#FG(0), Pl#BG(214)),
+      \ Pl#HiCurrent(   Pl#FG(0), Pl#BG(94)),
       \ Pl#HiInsert(    Pl#FG(117), Pl#BG( 31)),
       \ Pl#HiNonCurrent(Pl#FG(117), Pl#BG(24))
       \ ),
@@ -34,8 +34,8 @@ call Pl#Statusline(
 		\ Pl#Segment("%{Stl_GetSyntaxErrors('$line')}",
 			\ exists('g:loaded_syntastic_plugin') && g:loaded_syntastic_plugin == 1,
 			\
-			\ Pl#HiCurrent(   Pl#FG(214), Pl#Attr('bold')),
-			\ Pl#HiInsert(    Pl#FG(214), Pl#Attr('bold')),
+			\ Pl#HiCurrent(   Pl#FG(94), Pl#Attr('bold')),
+			\ Pl#HiInsert(    Pl#FG(94), Pl#Attr('bold')),
 			\ )
 		\ ),
 	\
@@ -44,7 +44,7 @@ call Pl#Statusline(
 		\ exists('g:has_cfi') && g:has_cfi == 1,
 		\
 		\ Pl#HiCurrent(   Pl#FG(247), Pl#BG(94)),
-		\ Pl#HiInsert(    Pl#FG(247), Pl#BG( 24))
+		\ Pl#HiInsert(    Pl#FG(247), Pl#BG( 94))
 		\ ),
 	\
 	\ Pl#Split(
@@ -69,24 +69,24 @@ call Pl#Statusline(
 		\ ),
 	\
 	\ Pl#Segment(" %3p%% ",
-		\ Pl#HiCurrent(   Pl#FG(0), Pl#BG(214)),
-		\ Pl#HiInsert (   Pl#FG(0), Pl#BG(214)),
+		\ Pl#HiCurrent(   Pl#FG(0), Pl#BG(94)),
+		\ Pl#HiInsert (   Pl#FG(0), Pl#BG(94)),
 		\ Pl#HiNonCurrent(Pl#FG(117), Pl#BG(24))
 		\ ),
 	\
 	\ Pl#SegmentGroup(
-		\ Pl#HiCurrent(   Pl#BG(252)),
-		\ Pl#HiInsert(    Pl#BG(252)),
+		\ Pl#HiCurrent(   Pl#BG(94)),
+		\ Pl#HiInsert(    Pl#BG(94)),
 		\ Pl#HiNonCurrent(Pl#BG(24)),
 		\
 		\ Pl#Segment(" $line %3l",
-			\ Pl#HiCurrent(   Pl#FG(242), Pl#Attr('bold')),
-			\ Pl#HiInsert(    Pl#FG(242), Pl#Attr('bold')),
+			\ Pl#HiCurrent(   Pl#FG(231), Pl#Attr('bold')),
+			\ Pl#HiInsert(    Pl#FG(231), Pl#Attr('bold')),
 			\ Pl#HiNonCurrent(Pl#FG(224))
 			\ ),
 		\ Pl#Segment(":%-2c ",
-			\ Pl#HiCurrent(   Pl#FG(244)),
-			\ Pl#HiInsert(    Pl#FG(244)),
+			\ Pl#HiCurrent(   Pl#FG(0)),
+			\ Pl#HiInsert(    Pl#FG(0)),
 			\ Pl#HiNonCurrent(Pl#FG(117))
 			\ )
 		\ )
